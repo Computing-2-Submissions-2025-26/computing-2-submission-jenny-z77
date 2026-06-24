@@ -1,5 +1,10 @@
 # Space Maze Chase
+## Student Information
 
+**Name:** Jingyi Zhao  
+**CID:** 02604152
+
+---
 Space Maze Chase is a grid-based maze game developed as part of the Computing 2: Applications coursework.
 
 The game features a player navigating through a maze, collecting cookies while avoiding an alien that actively chases the player. The player can escape by reaching the exit, even if not all cookies are collected.
