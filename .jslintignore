@@ -1,1 +1,4 @@
 web-app/main.js
+web-app/game.js
+web-app/tests/game.test.js
+web-app/ramda.js

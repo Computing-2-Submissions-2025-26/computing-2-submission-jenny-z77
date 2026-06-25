@@ -82,7 +82,7 @@ avoid the alien, and reach the exit before running out of lives or steps.</p></l
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line1">line 1</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line2">line 2</a>
     </li></ul></dd>
     
 
@@ -192,7 +192,7 @@ Has no effect if the player and alien are not on the same square.</p></li></ul><
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line349">line 349</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line384">line 384</a>
     </li></ul></dd>
     
 
@@ -367,7 +367,7 @@ or no steps remaining.</p></li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line427">line 427</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line464">line 464</a>
     </li></ul></dd>
     
 
@@ -539,7 +539,7 @@ checkLose(noLives);      // → true</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line401">line 401</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line437">line 437</a>
     </li></ul></dd>
     
 
@@ -664,7 +664,7 @@ checkWin(atExit);       // → true</code></pre>
 
         
 <div class="param-desc">
-    <p><code>true</code> if the player is on the exit square, <code>false</code> otherwise</p>
+    <p><code>true</code> if player is on exit, <code>false</code> otherwise</p>
 </div>
 
 
@@ -709,7 +709,7 @@ Has no effect if there is no cookie at the player's current position.</p></li></
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line307">line 307</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line339">line 339</a>
     </li></ul></dd>
     
 
@@ -885,7 +885,7 @@ alien, exit, walls, and cookies at their starting positions.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line81">line 81</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line84">line 84</a>
     </li></ul></dd>
     
 
@@ -1078,7 +1078,7 @@ all key entities, the player's remaining resources, and the overall status.</p><
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line529">line 529</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line571">line 571</a>
     </li></ul></dd>
     
 
@@ -1247,7 +1247,7 @@ i.e. the position is inside the board and not blocked by a wall.</p></li></ul></
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line157">line 157</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line184">line 184</a>
     </li></ul></dd>
     
 
@@ -1444,7 +1444,7 @@ has the greater distance to the player.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line241">line 241</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line271">line 271</a>
     </li></ul></dd>
     
 
@@ -1613,7 +1613,7 @@ Has no effect if the game has already ended.</p></li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line198">line 198</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line227">line 227</a>
     </li></ul></dd>
     
 
@@ -1812,8 +1812,8 @@ or the original state if the move was not possible</p>
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Advances the game by one full turn in response to the player's chosen direction.</p>
-<p>Each turn the player moves, picks up any cookie on their new square,
+    <dd class="tag-description"><ul class="dummy"><li><p>Advances the game by one full turn in response to the player's chosen direct
+Each turn the player moves, picks up any cookie on their new square,
 and is checked for a collision with the alien. If the player reaches the exit
 they win immediately. The alien then takes a step every two player moves,
 after which collisions are checked again. The player's step count decreases
@@ -1824,7 +1824,7 @@ by one; if no steps or lives remain, the game is lost.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line460">line 460</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line498">line 498</a>
     </li></ul></dd>
     
 
@@ -2030,7 +2030,7 @@ and restoring default lives and steps.</p></li></ul></dd>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line129">line 129</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line155">line 155</a>
     </li></ul></dd>
     
 
@@ -2150,7 +2150,7 @@ game.lives;            // 3</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line31">line 31</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line34">line 34</a>
     </li></ul></dd>
     
 
@@ -2254,7 +2254,7 @@ game.lives;            // 3</code></pre>
 
             
 
-            <td class="description last"><p>Player's default starting position</p></td>
+            <td class="description last"><p>Player's start position</p></td>
         </tr>
 
     
@@ -2398,7 +2398,7 @@ game.lives;            // 3</code></pre>
 
             
 
-            <td class="description last"><p>Number of cookies collected so far</p></td>
+            <td class="description last"><p>Number of cookies collected</p></td>
         </tr>
 
     
@@ -2422,7 +2422,7 @@ game.lives;            // 3</code></pre>
 
             
 
-            <td class="description last"><p>Total number of moves the player has made</p></td>
+            <td class="description last"><p>Total number of moves</p></td>
         </tr>
 
     
@@ -2494,7 +2494,7 @@ game.lives;            // 3</code></pre>
 
             
 
-            <td class="description last"><p>Game status: <code>&quot;running&quot;</code> | <code>&quot;win&quot;</code> | <code>&quot;lose&quot;</code></p></td>
+            <td class="description last"><p>3 Game status</p></td>
         </tr>
 
     
@@ -2545,7 +2545,7 @@ game.lives;            // 3</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line48">line 48</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line51">line 51</a>
     </li></ul></dd>
     
 
@@ -2732,7 +2732,7 @@ game.lives;            // 3</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="game.js.html">game.js</a>, <a href="game.js.html#line24">line 24</a>
+        <a href="game.js.html">game.js</a>, <a href="game.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -2888,7 +2888,7 @@ game.lives;            // 3</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Wed Jun 24 2026 14:34:38 GMT+0100 (British Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.5</a> on Thu Jun 25 2026 02:30:38 GMT+0100 (British Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

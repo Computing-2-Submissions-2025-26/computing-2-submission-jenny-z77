@@ -10,6 +10,8 @@
 // Functional helpers
 
 function samePos(a, b) {
+    "use strict";
+
     return a.row === b.row && a.col === b.col;
 }
 
@@ -80,6 +82,8 @@ const DIRECTION_OFFSETS = {
  * game.steps;            // 20
  */
 function createGame(config) {
+    "use strict";
+
     const options = config || {};
 
     return {
@@ -149,6 +153,8 @@ function createGame(config) {
  * game.lives;            // 3
  */
 function resetGame() {
+    "use strict";
+
     return createGame();
 }
 
@@ -176,6 +182,8 @@ function resetGame() {
  * isValidMove(game, { row: -1, col: 0 }); // → false
  */
 function isValidMove(game, pos) {
+    "use strict";
+
     const row = pos.row;
     const col = pos.col;
     const insideBoard = (
@@ -217,6 +225,8 @@ function isValidMove(game, pos) {
  * blocked.player; // { row: 1, col: 0 } — player did not move
  */
 function movePlayer(game, direction) {
+    "use strict";
+
     if (game.status !== "running") {
         return game;
     }
@@ -259,6 +269,8 @@ function movePlayer(game, direction) {
  *
  */
 function moveAlien(game) {
+    "use strict";
+
     if (game.status !== "running") {
         return game;
     }
@@ -325,6 +337,8 @@ function moveAlien(game) {
  * noCookie.collectedCookies; // 0
  */
 function collectCookie(game) {
+    "use strict";
+
     const {kept, found} = game.cookies.reduce(function (acc, cookie) {
         return (
             samePos(cookie, game.player)
@@ -368,6 +382,8 @@ function collectCookie(game) {
  * next.status;   // "lose"
  */
 function checkCollision(game) {
+    "use strict";
+
     if (game.status !== "running") {
         return game;
     }
@@ -419,6 +435,8 @@ function checkCollision(game) {
  * checkWin(atExit);       // → true
  */
 function checkWin(game) {
+    "use strict";
+
     return samePos(game.player, game.exit);
 }
 
@@ -444,6 +462,8 @@ function checkWin(game) {
  * checkLose(noLives);      // → true
  */
 function checkLose(game) {
+    "use strict";
+
     return game.lives <= 0 || game.steps <= 0;
 }
 
@@ -476,6 +496,8 @@ function checkLose(game) {
  * atExit.status; // "win"
  */
 function nextTurn(game, direction) {
+    "use strict";
+
     if (game.status !== "running") {
         return game;
     }
@@ -547,6 +569,8 @@ function nextTurn(game, direction) {
  * state.collectedCookies; // 0
  */
 function getGameState(game) {
+    "use strict";
+
     return {
         player: game.player,
         alien: game.alien,
