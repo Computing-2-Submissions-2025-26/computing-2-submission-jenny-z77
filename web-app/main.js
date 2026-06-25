@@ -17,13 +17,27 @@ const LEVELS = [
   {
     //Level 1
     walls: [
-      { row: 0, col: 3 },{ row: 1, col: 3 }, { row: 1, col: 5 },
-      { row: 2, col: 0 }, { row: 2, col: 1 }, { row: 2, col: 5 }, { row: 2, col: 7 },
-      { row: 3, col: 3 },{ row: 4, col: 1 }, { row: 4, col: 3 }, { row: 4, col: 5 },
-      { row: 5, col: 1 },{ row: 6, col: 3 }, { row: 6, col: 4 }, { row: 6, col: 6 }
+      { row: 0, col: 3 },
+      { row: 1, col: 3 },
+      { row: 1, col: 5 },
+      { row: 2, col: 0 },
+      { row: 2, col: 1 },
+      { row: 2, col: 5 },
+      { row: 2, col: 7 },
+      { row: 3, col: 3 },
+      { row: 4, col: 1 },
+      { row: 4, col: 3 },
+      { row: 4, col: 5 },
+      { row: 5, col: 1 },
+      { row: 6, col: 3 },
+      { row: 6, col: 4 },
+      { row: 6, col: 6 }
     ],
     cookies: [
-      { row: 0, col: 1 }, { row: 3, col: 4 }, { row: 5, col: 2 }, { row: 7, col: 6 }
+      { row: 0, col: 1 },
+      { row: 3, col: 4 },
+      { row: 5, col: 2 },
+      { row: 7, col: 6 }
     ],
     playerStart: { row: 1, col: 0 },
     alien: { row: 7, col: 0 },
@@ -32,14 +46,34 @@ const LEVELS = [
   {
     //Level 2
     walls: [
-      { row: 0, col: 4 }, { row: 0, col: 5 }, { row: 0, col: 6 },{ row: 1, col: 1 }, { row: 1, col: 6 },
-      { row: 2, col: 1 }, { row: 2, col: 3 }, { row: 2, col: 4 }, { row: 2, col: 6 },{ row: 3, col: 1 }, 
-      { row: 3, col: 6 },{ row: 4, col: 1 }, { row: 4, col: 3 }, { row: 4, col: 4 }, { row: 4, col: 6 },
-      { row: 5, col: 1 }, { row: 5, col: 6 },{ row: 6, col: 1 }, { row: 6, col: 2 }, { row: 6, col: 3 }, 
-      { row: 6, col: 4 },{ row: 7, col: 4 }
+      { row: 0, col: 4 },
+      { row: 0, col: 5 },
+      { row: 0, col: 6 },
+      { row: 1, col: 1 },
+      { row: 1, col: 6 },
+      { row: 2, col: 1 },
+      { row: 2, col: 3 },
+      { row: 2, col: 4 },
+      { row: 2, col: 6 },
+      { row: 3, col: 1 },
+      { row: 3, col: 6 },
+      { row: 4, col: 1 },
+      { row: 4, col: 3 },
+      { row: 4, col: 4 },
+      { row: 4, col: 6 },
+      { row: 5, col: 1 },
+      { row: 5, col: 6 },
+      { row: 6, col: 1 },
+      { row: 6, col: 2 },
+      { row: 6, col: 3 },
+      { row: 6, col: 4 },
+      { row: 7, col: 4 }
     ],
     cookies: [
-      { row: 0, col: 2 }, { row: 3, col: 3 }, { row: 5, col: 5 }, { row: 7, col: 1 }
+      { row: 0, col: 2 },
+      { row: 3, col: 3 },
+      { row: 5, col: 5 },
+      { row: 7, col: 1 }
     ],
     playerStart: { row: 0, col: 0 },
     alien: { row: 7, col: 7 },
@@ -48,13 +82,30 @@ const LEVELS = [
   {
     //Level 3
     walls: [
-      { row: 0, col: 2 },{ row: 1, col: 2 }, { row: 1, col: 4 }, { row: 1, col: 6 },
-      { row: 2, col: 4 }, { row: 2, col: 6 },{ row: 3, col: 0 }, { row: 3, col: 1 }, { row: 3, col: 4 },
-      { row: 4, col: 4 }, { row: 4, col: 6 },{ row: 5, col: 2 }, { row: 5, col: 4 }, { row: 5, col: 6 },
-      { row: 6, col: 2 },{ row: 7, col: 2 }, { row: 7, col: 4 }, { row: 7, col: 5 }
+      { row: 0, col: 2 },
+      { row: 1, col: 2 },
+      { row: 1, col: 4 },
+      { row: 1, col: 6 },
+      { row: 2, col: 4 },
+      { row: 2, col: 6 },
+      { row: 3, col: 0 },
+      { row: 3, col: 1 },
+      { row: 3, col: 4 },
+      { row: 4, col: 4 },
+      { row: 4, col: 6 },
+      { row: 5, col: 2 },
+      { row: 5, col: 4 },
+      { row: 5, col: 6 },
+      { row: 6, col: 2 },
+      { row: 7, col: 2 },
+      { row: 7, col: 4 },
+      { row: 7, col: 5 }
     ],
     cookies: [
-      { row: 0, col: 7 }, { row: 2, col: 1 }, { row: 4, col: 5 }, { row: 6, col: 7 }
+      { row: 0, col: 7 },
+      { row: 2, col: 1 },
+      { row: 4, col: 5 },
+      { row: 6, col: 7 }
     ],
     playerStart: { row: 0, col: 0 },
     alien: { row: 7, col: 7 },
@@ -73,12 +124,15 @@ const LEVELS = [
       { row: 7, col: 4 }
     ],
     cookies: [
-      { row: 0, col: 6 }, { row: 2, col: 1 }, { row: 4, col: 6 }, { row: 6, col: 6 }
+      { row: 0, col: 6 },
+      { row: 2, col: 1 },
+      { row: 4, col: 6 },
+      { row: 6, col: 6 }
     ],
     playerStart: { row: 0, col: 0 },
     alien: { row: 0, col: 7 },
     exit: { row: 7, col: 0 }
-  },
+  }
 ];
 
 
@@ -94,7 +148,10 @@ const PLAYER_CHARS = [
 
 function randomChar() {
   const src = PLAYER_CHARS[Math.floor(Math.random() * PLAYER_CHARS.length)];
-  document.documentElement.style.setProperty("--player-img", `url("${src}")`);
+  document.documentElement.style.setProperty(
+    "--player-img",
+    "url(\"" + src + "\")"
+  );
 }
 
 
@@ -103,17 +160,21 @@ function randomChar() {
 let currentLevel = 0;
 let game = createGameForLevel(currentLevel);
 
+function copyPosition(pos) {
+  return Object.assign({}, pos);
+}
+
 function createGameForLevel(level) {
-  const L = LEVELS[level];
-  return {
-    ...createGame({ lives: 3, steps: 40 }),
-    walls:       L.walls.filter(Boolean).map(w => ({ ...w })),
-    cookies:     L.cookies.map(c => ({ ...c })),
-    playerStart: { ...L.playerStart },
-    player:      { ...L.playerStart },
-    alien:       { ...L.alien },
-    exit:        { ...L.exit }
-  };
+  const selectedLevel = LEVELS[level];
+
+  return Object.assign({}, createGame({ lives: 3, steps: 40 }), {
+    walls: selectedLevel.walls.filter(Boolean).map(copyPosition),
+    cookies: selectedLevel.cookies.map(copyPosition),
+    playerStart: copyPosition(selectedLevel.playerStart),
+    player: copyPosition(selectedLevel.playerStart),
+    alien: copyPosition(selectedLevel.alien),
+    exit: copyPosition(selectedLevel.exit)
+  });
 }
 
 
@@ -125,9 +186,14 @@ bgMusic.volume = 0.1;
 
 const coinSound = new Audio("assets/music/pickupCoin.wav");
 coinSound.volume = 0.3;
+
+function ignoreAudioError() {
+  return undefined;
+}
+
 function playCookieSound() {
   coinSound.currentTime = 0;
-  coinSound.play().catch(() => {});
+  coinSound.play().catch(ignoreAudioError);
 }
 
 const failSound = new Audio("assets/music/gameover.mp3");
@@ -137,7 +203,7 @@ const hurtSound = new Audio("assets/music/Hurt.wav");
 hurtSound.volume = 0.3;
 function playHurtSound() {
   hurtSound.currentTime = 0;
-  hurtSound.play().catch(() => {});
+  hurtSound.play().catch(ignoreAudioError);
 }
 
 const levelUpSound = new Audio("assets/music/levelup.mp3");
@@ -146,15 +212,15 @@ levelUpSound.volume = 0.3;
 let audioStarted = false;
 function startAudio() {
   if (!audioStarted) {
-    bgMusic.play().catch(() => {});
+    bgMusic.play().catch(ignoreAudioError);
     audioStarted = true;
   }
 }
 
 const musicToggleBtn = document.getElementById("music-toggle");
-musicToggleBtn.addEventListener("click", () => {
+musicToggleBtn.addEventListener("click", function () {
   if (bgMusic.paused) {
-    bgMusic.play().catch(() => {});
+    bgMusic.play().catch(ignoreAudioError);
     musicToggleBtn.textContent = "🔊";
   } else {
     bgMusic.pause();
@@ -193,7 +259,7 @@ function clearCountdown() {
 function startCountdown() {
   let secs = 3;
   overlayCountdown.textContent = `✨ Secret ending in ${secs}...`;
-  countdownTimer = setInterval(() => {
+  countdownTimer = setInterval(function () {
     secs--;
     if (secs <= 0) {
       clearCountdown();
@@ -211,9 +277,12 @@ const UNLOCK_KEY = "spaceMaze_maxUnlocked";
 
 function getMaxUnlocked() {
   const savedLevel = parseInt(localStorage.getItem(UNLOCK_KEY) || "0", 10);
-  return Number.isFinite(savedLevel)
-    ? Math.min(Math.max(savedLevel, 0), LEVELS.length - 1)
-    : 0;
+
+  if (Number.isFinite(savedLevel)) {
+    return Math.min(Math.max(savedLevel, 0), LEVELS.length - 1);
+  }
+
+  return 0;
 }
 
 function saveUnlock(levelIndex) {
@@ -227,10 +296,12 @@ const SCORES_KEY = "spaceMaze_scores";
 function getLevelScores() {
   try {
     const scores = JSON.parse(localStorage.getItem(SCORES_KEY) || "{}");
-    return scores && typeof scores === "object" && !Array.isArray(scores)
-      ? scores
-      : {};
-  } catch {
+    if (scores && typeof scores === "object" && !Array.isArray(scores)) {
+      return scores;
+    }
+
+    return {};
+  } catch (ignore) {
     localStorage.removeItem(SCORES_KEY);
     return {};
   }
@@ -238,7 +309,12 @@ function getLevelScores() {
 
 function saveLevelScore(levelIndex, cookies) {
   const scores = getLevelScores();
-  const prev = scores[levelIndex] ?? -1;
+  let prev = -1;
+
+  if (scores[levelIndex] !== undefined) {
+    prev = scores[levelIndex];
+  }
+
   if (cookies > prev) {
     scores[levelIndex] = cookies;
     localStorage.setItem(SCORES_KEY, JSON.stringify(scores));
@@ -254,24 +330,45 @@ function showLevelSelect() {
 
   const scores = getLevelScores();
 
-  LEVELS.forEach((_, i) => {
+  LEVELS.forEach(function (levelConfig, i) {
     const btn = document.createElement("button");
     const locked = i > maxUnlocked;
-    const score = scores[i] ?? null;
-    const perfect = score >= TOTAL_COOKIES;
-    const scoreText = score !== null
-      ? (perfect ? "⭐ Perfect!" : `${score}/${TOTAL_COOKIES} cookies`)
-      : "—";
+    let buttonClass = "level-btn";
+    let levelLabel = String(i + 1);
+    let score = null;
+    let scoreText = "—";
 
-    btn.className = "level-btn" + (locked ? " level-btn--locked" : "") + (perfect ? " level-btn--perfect" : "");
+    if (scores[i] !== undefined) {
+      score = scores[i];
+    }
+
+    const perfect = score >= TOTAL_COOKIES;
+
+    if (locked) {
+      levelLabel = "🔒";
+      scoreText = "";
+    } else if (perfect) {
+      scoreText = "⭐ Perfect!";
+    } else if (score !== null) {
+      scoreText = `${score}/${TOTAL_COOKIES} cookies`;
+    }
+
+    if (locked) {
+      buttonClass += " level-btn--locked";
+    }
+    if (perfect) {
+      buttonClass += " level-btn--perfect";
+    }
+
+    btn.className = buttonClass;
     btn.disabled = locked;
     btn.innerHTML = `
-      <span class="level-btn__number">${locked ? "🔒" : (i + 1)}</span>
+      <span class="level-btn__number">${levelLabel}</span>
       Level ${i + 1}
-      <span class="level-btn__score">${locked ? "" : scoreText}</span>
+      <span class="level-btn__score">${scoreText}</span>
     `;
     if (!locked) {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("click", function () {
         currentLevel = i;
         game = createGameForLevel(i);
         randomChar();
@@ -294,29 +391,38 @@ function hideLevelSelect() {
 // Board generation — runs once, creates all 64 cells
 
 function buildBoard() {
+  let col;
+  let row;
+
   boardEl.innerHTML = "";
-  for (let row = 0; row < BOARD_SIZE; row++) {
-    for (let col = 0; col < BOARD_SIZE; col++) {
+  row = 0;
+  while (row < BOARD_SIZE) {
+    col = 0;
+    while (col < BOARD_SIZE) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
       cell.dataset.row = row;
       cell.dataset.col = col;
       cell.setAttribute("role", "gridcell");
       boardEl.appendChild(cell);
+      col += 1;
     }
+    row += 1;
   }
 }
 
 // Render — updates cell classes to reflect current game state
 
 function hasPosition(list, row, col) {
-  return list.some(p => p.row === row && p.col === col);
+  return list.some(function (pos) {
+    return pos.row === row && pos.col === col;
+  });
 }
 
 function renderBoard() {
   const state = getGameState(game);
 
-  boardEl.querySelectorAll(".cell").forEach(cell => {
+  boardEl.querySelectorAll(".cell").forEach(function (cell) {
     const row = Number(cell.dataset.row);
     const col = Number(cell.dataset.col);
 
@@ -344,48 +450,78 @@ function renderBoard() {
 }
 
 function getCellLabel(row, col) {
-  if (game.player.row === row && game.player.col === col) return "Player";
-  if (game.alien.row  === row && game.alien.col  === col) return "Alien";
-  if (game.exit.row   === row && game.exit.col   === col) return "Exit";
-  if (hasPosition(game.cookies, row, col)) return "Cookie";
-  if (hasPosition(game.walls,   row, col)) return "Wall";
+  if (game.player.row === row && game.player.col === col) {
+    return "Player";
+  }
+  if (game.alien.row === row && game.alien.col === col) {
+    return "Alien";
+  }
+  if (game.exit.row === row && game.exit.col === col) {
+    return "Exit";
+  }
+  if (hasPosition(game.cookies, row, col)) {
+    return "Cookie";
+  }
+  if (hasPosition(game.walls, row, col)) {
+    return "Wall";
+  }
   return "Empty";
 }
 
 
 function triggerHitFlash() {
   boardWrapperEl.classList.remove("board-wrapper--hit");
-  void boardWrapperEl.offsetWidth; // reflow to restart animation
   boardWrapperEl.classList.add("board-wrapper--hit");
   boardWrapperEl.addEventListener(
     "animationend",
-    () => boardWrapperEl.classList.remove("board-wrapper--hit"),
+    function () {
+      boardWrapperEl.classList.remove("board-wrapper--hit");
+    },
     { once: true }
   );
 }
 
 function renderHUD() {
+  let i;
+  let img;
+  let iconClass;
+
   stepsEl.textContent = game.steps;
   levelDisplayEl.textContent = `Level ${currentLevel + 1} / ${LEVELS.length}`;
 
   // Hearts
   hudLivesEl.innerHTML = "";
-  for (let i = 0; i < MAX_LIVES; i++) {
-    const img = document.createElement("img");
+  i = 0;
+  while (i < MAX_LIVES) {
+    img = document.createElement("img");
     img.src = HEART_SRC;
-    img.alt = i < game.lives ? "life" : "lost life";
-    img.className = "hud__icon" + (i < game.lives ? "" : " hud__icon--dim");
+    iconClass = "hud__icon";
+    if (i < game.lives) {
+      img.alt = "life";
+    } else {
+      img.alt = "lost life";
+      iconClass += " hud__icon--dim";
+    }
+    img.className = iconClass;
     hudLivesEl.appendChild(img);
+    i += 1;
   }
 
   hudCookiesEl.innerHTML = "";
-  for (let i = 0; i < TOTAL_COOKIES; i++) {
-    const img = document.createElement("img");
+  i = 0;
+  while (i < TOTAL_COOKIES) {
+    img = document.createElement("img");
     img.src = COOKIE_HUD_SRC;
-    img.alt = i < game.collectedCookies ? "cookie collected" : "cookie remaining";
-    img.className = "hud__icon hud__icon--cookie" +
-      (i < game.collectedCookies ? "" : " hud__icon--dim");
+    iconClass = "hud__icon hud__icon--cookie";
+    if (i < game.collectedCookies) {
+      img.alt = "cookie collected";
+    } else {
+      img.alt = "cookie remaining";
+      iconClass += " hud__icon--dim";
+    }
+    img.className = iconClass;
     hudCookiesEl.appendChild(img);
+    i += 1;
   }
   const countSpan = document.createElement("span");
   countSpan.className = "hud__cookie-count";
@@ -395,50 +531,73 @@ function renderHUD() {
 
 // Overlay — win / lose message centred over the board
 
+function overlayKey(key) {
+  return `<span class="overlay__key">${key}</span>`;
+}
+
 function renderStatus() {
+  let i;
+  let img;
+  let iconClass;
+
   if (game.status === "win") {
     const isLastLevel = currentLevel >= LEVELS.length - 1;
 
     overlayTitle.className = "overlay__title overlay__title--win";
     overlayCookies.innerHTML = "";
-    for (let i = 0; i < TOTAL_COOKIES; i++) {
-      const img = document.createElement("img");
+    i = 0;
+    while (i < TOTAL_COOKIES) {
+      img = document.createElement("img");
       img.src = COOKIE_HUD_SRC;
-      img.alt = i < game.collectedCookies ? "collected" : "missed";
-      img.className = "overlay__cookie-icon" +
-        (i < game.collectedCookies ? "" : " overlay__cookie-icon--dim");
+      iconClass = "overlay__cookie-icon";
+      if (i < game.collectedCookies) {
+        img.alt = "collected";
+      } else {
+        img.alt = "missed";
+        iconClass += " overlay__cookie-icon--dim";
+      }
+      img.className = iconClass;
       overlayCookies.appendChild(img);
+      i += 1;
     }
 
     saveUnlock(currentLevel + 1);
     saveLevelScore(currentLevel, game.collectedCookies);
 
     if (currentLevel >= LEVELS.length - 1 && allLevelsPerfect()) {
-      const K = (k) => `<span class="overlay__key">${k}</span>`;
       overlayTitle.textContent = "🏆 All Levels Complete!";
       overlayTitle.className = "overlay__title overlay__title--win";
-      overlaySub.innerHTML = `${game.collectedCookies}/${TOTAL_COOKIES} cookies  •  ${K("Q")} secret ending  ${K("R")} again  ${K("S")} levels`;
+      overlaySub.innerHTML =
+      `${game.collectedCookies}/${TOTAL_COOKIES} cookies  •
+      ${overlayKey("Q")} secret ending  ${overlayKey("R")} again
+      ${overlayKey("S")} levels`;
       if (!overlayEl.classList.contains("is-visible")) {
         levelUpSound.currentTime = 0;
-        levelUpSound.play().catch(() => {});
+        levelUpSound.play().catch(ignoreAudioError);
         startCountdown();
       }
       overlayEl.classList.add("is-visible");
       return;
     }
-    const K = (k) => `<span class="overlay__key">${k}</span>`;
     if (isLastLevel) {
       overlayTitle.textContent = "🏆 All Levels Complete!";
-      overlaySub.innerHTML = `${game.collectedCookies}/${TOTAL_COOKIES} cookies  •  ${K("R")} again  ${K("S")} levels`;
+      overlaySub.innerHTML = `${game.collectedCookies}/${TOTAL_COOKIES} cookies•
+       ${overlayKey("R")} again  ${overlayKey("S")} levels`;
     } else {
       const perfect = game.collectedCookies >= TOTAL_COOKIES;
-      overlayTitle.textContent = perfect ? "🎉 Perfect Clear!" : "✅ Level Cleared!";
-      overlaySub.innerHTML = `${game.collectedCookies}/${TOTAL_COOKIES} cookies  •  ${K("N")} next  ${K("R")} restart  ${K("S")} levels`;
+      if (perfect) {
+        overlayTitle.textContent = "🎉 Perfect Clear!";
+      } else {
+        overlayTitle.textContent = "✅ Level Cleared!";
+      }
+      overlaySub.innerHTML = `${game.collectedCookies}/${TOTAL_COOKIES} cookies
+       • ${overlayKey("N")} next  ${overlayKey("R")} restart
+       ${overlayKey("S")} levels`;
     }
 
     if (!overlayEl.classList.contains("is-visible")) {
       levelUpSound.currentTime = 0;
-      levelUpSound.play().catch(() => {});
+      levelUpSound.play().catch(ignoreAudioError);
     }
     overlayEl.classList.add("is-visible");
 
@@ -446,10 +605,11 @@ function renderStatus() {
     overlayTitle.textContent = "💀 Game Over";
     overlayTitle.className = "overlay__title overlay__title--lose";
     overlayCookies.innerHTML = "";
-    overlaySub.innerHTML = `No lives or steps left.  Press <span class="overlay__key">R</span> to restart.`;
+    overlaySub.innerHTML = `No lives or steps left.
+    Press <span class="overlay__key">R</span> to restart.`;
     if (!overlayEl.classList.contains("is-visible")) {
       failSound.currentTime = 0;
-      failSound.play().catch(() => {});
+      failSound.play().catch(ignoreAudioError);
     }
     overlayEl.classList.add("is-visible");
 
@@ -480,7 +640,9 @@ document.addEventListener("keydown", handleKey);
 
 function handleKey(event) {
   if (isGameInputBlocked()) {
-    if (KEY_DIRECTION[event.key]) event.preventDefault();
+    if (KEY_DIRECTION[event.key]) {
+      event.preventDefault();
+    }
     return;
   }
 
@@ -502,7 +664,7 @@ function handleKey(event) {
   if ((event.key === "n" || event.key === "N") && game.status === "win") {
     if (currentLevel < LEVELS.length - 1) {
       clearCountdown();
-      currentLevel++;
+      currentLevel += 1;
       game = createGameForLevel(currentLevel);
       randomChar();
       render();
@@ -519,10 +681,14 @@ function handleKey(event) {
     return;
   }
 
-  if (game.status !== "running") return;
+  if (game.status !== "running") {
+    return;
+  }
 
   const direction = KEY_DIRECTION[event.key];
-  if (!direction) return;
+  if (!direction) {
+    return;
+  }
 
   // Prevent page scrolling with arrow keys
   event.preventDefault();
@@ -533,7 +699,9 @@ function handleKey(event) {
 
   game = nextTurn(game, direction);
 
-  if (game.collectedCookies > cookiesBefore) playCookieSound();
+  if (game.collectedCookies > cookiesBefore) {
+    playCookieSound();
+  }
   if (game.lives < livesBefore) {
     playHurtSound();
     triggerHitFlash();
@@ -542,7 +710,7 @@ function handleKey(event) {
 }
 
 // Reset button
-resetBtn.addEventListener("click", () => {
+resetBtn.addEventListener("click", function () {
   clearCountdown();
   game = createGameForLevel(currentLevel);
   randomChar();
@@ -576,7 +744,9 @@ introMusic.volume = 0.3;
 let introActive = false;
 
 function endIntro() {
-  if (!introActive) return;
+  if (!introActive) {
+    return;
+  }
   introActive = false;
   introVideo.pause();
   introMusic.pause();
@@ -615,13 +785,21 @@ function endOutro() {
   outroMusic.pause();
   outroMusic.currentTime = 0;
   outroScreen.classList.add("is-hidden");
-  bgMusic.play().catch(() => {});
+  bgMusic.play().catch(ignoreAudioError);
   showLevelSelect();
 }
 
 function allLevelsPerfect() {
   const scores = getLevelScores();
-  return LEVELS.every((_, i) => (scores[i] ?? 0) >= TOTAL_COOKIES);
+  return LEVELS.every(function (levelConfig, i) {
+    let score = 0;
+
+    if (scores[i] !== undefined) {
+      score = scores[i];
+    }
+
+    return score >= TOTAL_COOKIES;
+  });
 }
 
 function showOutro() {
@@ -632,12 +810,12 @@ function showOutro() {
   bgMusic.pause();
 
   outroMusic.currentTime = 0;
-  outroMusic.play().catch(() => {});
+  outroMusic.play().catch(ignoreAudioError);
   outroVideo.currentTime = 0;
-  outroVideo.play().catch(() => {});
+  outroVideo.play().catch(ignoreAudioError);
 
-  OUTRO_LINES.forEach((line, i) => {
-    setTimeout(() => {
+  OUTRO_LINES.forEach(function (line, i) {
+    setTimeout(function () {
       const span = document.createElement("span");
       span.className = "intro-story-line";
       span.textContent = line;
@@ -651,8 +829,8 @@ function showOutro() {
 
 function startStoryText() {
   introOverlay.classList.add("is-dim");
-  STORY_LINES.forEach((line, i) => {
-    setTimeout(() => {
+  STORY_LINES.forEach(function (line, i) {
+    setTimeout(function () {
       const span = document.createElement("span");
       span.className = "intro-story-line";
       span.textContent = line;
@@ -661,7 +839,7 @@ function startStoryText() {
   });
 
   const totalDelay = 800 + STORY_LINES.length * 1000 + 500;
-  setTimeout(() => {
+  setTimeout(function () {
     const span = document.createElement("span");
     span.className = "intro-story-line intro-press-key";
     span.textContent = "— Press any key to start —";
@@ -673,11 +851,13 @@ function startStoryText() {
 
 function runIntro() {
   introActive = true;
-  introMusic.play().catch(() => {});
-  introVideo.play().catch(() => endIntro());
+  introMusic.play().catch(ignoreAudioError);
+  introVideo.play().catch(function () {
+    endIntro();
+  });
 
   // First loop ends → dim + show text, then loop video
-  introVideo.addEventListener("ended", () => {
+  introVideo.addEventListener("ended", function () {
     startStoryText();
     introVideo.loop = true;
     introVideo.play();

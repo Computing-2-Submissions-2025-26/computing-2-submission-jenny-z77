@@ -1,3 +1,4 @@
+/*jslint node */
 /**
  * @fileoverview Space Maze Chase - Core Game Logic
  * A turn-based 8×8 space board game. The player moves one square per turn,
@@ -5,18 +6,18 @@
  * avoid the alien, and reach the exit before running out of lives or steps.
  * @module game
  */
+
 // Functional helpers
 
 function samePos(a, b) {
-  "use strict";
-  return a.row === b.row && a.col === b.col;
+    return a.row === b.row && a.col === b.col;
 }
 
 const DIRECTION_OFFSETS = {
-  up:    { row: -1, col:  0 },
-  down:  { row:  1, col:  0 },
-  left:  { row:  0, col: -1 },
-  right: { row:  0, col:  1 }
+    up: {row: -1, col: 0},
+    down: {row: 1, col: 0},
+    left: {row: 0, col: -1},
+    right: {row: 0, col: 1}
 };
 
 // Type Definitions
@@ -32,17 +33,17 @@ const DIRECTION_OFFSETS = {
  * Represents the full game state.
  * @typedef {Object} Game
  * @property {number}          boardSize        - Size of the board (always 8)
- * @property {Position}        playerStart      - Player's default starting position
+ * @property {Position}        playerStart      - Player's start position
  * @property {Position}        player           - Current player position
  * @property {Position}        alien            - Current alien position
  * @property {Position}        exit             - Exit position
  * @property {Array<Position>} walls            - List of wall positions
  * @property {Array<Position>} cookies          - Remaining cookie positions
- * @property {number}          collectedCookies - Number of cookies collected so far
- * @property {number}          playerMoves      - Total number of moves the player has made
+ * @property {number}          collectedCookies - Number of cookies collected
+ * @property {number}          playerMoves      - Total number of moves
  * @property {number}          lives            - Remaining lives
  * @property {number}          steps            - Remaining steps
- * @property {string}          status           - Game status: `"running"` | `"win"` | `"lose"`
+ * @property {string}          status           - 3 Game status
  */
 
 /**
@@ -79,37 +80,58 @@ const DIRECTION_OFFSETS = {
  * game.steps;            // 20
  */
 function createGame(config) {
-  "use strict";
-  const options = config || {};
+    const options = config || {};
 
-  return {
-    boardSize: 8,
+    return {
+        boardSize: 8,
 
-    playerStart: { row: 1, col: 0 },
-    player: { row: 1, col: 0 },
+        playerStart: {row: 1, col: 0},
+        player: {row: 1, col: 0},
 
-    alien: { row: 7, col: 0 },
+        alien: {row: 7, col: 0},
 
-    exit: { row: 0, col: 7 },
+        exit: {row: 0, col: 7},
 
-    walls: [
-      { row: 0, col: 3 },{ row: 1, col: 3 },{ row: 1, col: 5 },{ row: 2, col: 0 },
-      { row: 2, col: 1 },{ row: 2, col: 5 },{ row: 2, col: 7 },{ row: 3, col: 3 },
-      { row: 4, col: 1 },{ row: 4, col: 3 },{ row: 4, col: 5 },{ row: 5, col: 1 },
-      { row: 6, col: 3 },{ row: 6, col: 4 },{ row: 6, col: 6 }
-    ],
+        walls: [
+            {row: 0, col: 3},
+            {row: 1, col: 3},
+            {row: 1, col: 5},
+            {row: 2, col: 0},
+            {row: 2, col: 1},
+            {row: 2, col: 5},
+            {row: 2, col: 7},
+            {row: 3, col: 3},
+            {row: 4, col: 1},
+            {row: 4, col: 3},
+            {row: 4, col: 5},
+            {row: 5, col: 1},
+            {row: 6, col: 3},
+            {row: 6, col: 4},
+            {row: 6, col: 6}
+        ],
 
-    cookies: [
-      { row: 0, col: 1 },{ row: 3, col: 4 },{ row: 5, col: 2 },{ row: 7, col: 6 }
-    ],
+        cookies: [
+            {row: 0, col: 1},
+            {row: 3, col: 4},
+            {row: 5, col: 2},
+            {row: 7, col: 6}
+        ],
 
-    collectedCookies: 0,
-    playerMoves: 0,
-    lives: options.lives !== undefined ? options.lives : 3,
-    steps: options.steps !== undefined ? options.steps : 30,
+        collectedCookies: 0,
+        playerMoves: 0,
+        lives: (
+            options.lives !== undefined
+            ? options.lives
+            : 3
+        ),
+        steps: (
+            options.steps !== undefined
+            ? options.steps
+            : 30
+        ),
 
-    status: "running"
-  };
+        status: "running"
+    };
 }
 
 /**
@@ -127,8 +149,7 @@ function createGame(config) {
  * game.lives;            // 3
  */
 function resetGame() {
-  "use strict";
-  return createGame();
+    return createGame();
 }
 
 
@@ -155,22 +176,22 @@ function resetGame() {
  * isValidMove(game, { row: -1, col: 0 }); // → false
  */
 function isValidMove(game, pos) {
-  "use strict";
-  const row = pos.row;
-  const col = pos.col;
-  const insideBoard =
-    row >= 0 &&
-    row < game.boardSize &&
-    col >= 0 &&
-    col < game.boardSize;
+    const row = pos.row;
+    const col = pos.col;
+    const insideBoard = (
+        row >= 0 &&
+        row < game.boardSize &&
+        col >= 0 &&
+        col < game.boardSize
+    );
 
-  if (!insideBoard) {
-    return false;
-  }
+    if (!insideBoard) {
+        return false;
+    }
 
-  return !game.walls.some(function (wall) {
-    return samePos(wall, { row, col });
-  });
+    return !game.walls.some(function (wall) {
+        return samePos(wall, {row, col});
+    });
 }
 
 /**
@@ -196,28 +217,27 @@ function isValidMove(game, pos) {
  * blocked.player; // { row: 1, col: 0 } — player did not move
  */
 function movePlayer(game, direction) {
-  "use strict";
-  if (game.status !== "running") {
-    return game;
-  }
+    if (game.status !== "running") {
+        return game;
+    }
 
-  const offset = DIRECTION_OFFSETS[direction];
-  if (!offset) {
-    return game;
-  }
+    const offset = DIRECTION_OFFSETS[direction];
+    if (!offset) {
+        return game;
+    }
 
-  const newPos = {
-    row: game.player.row + offset.row,
-    col: game.player.col + offset.col
-  };
+    const newPos = {
+        row: game.player.row + offset.row,
+        col: game.player.col + offset.col
+    };
 
-  if (!isValidMove(game, newPos)) {
-    return game;
-  }
+    if (!isValidMove(game, newPos)) {
+        return game;
+    }
 
-  return Object.assign({}, game, {
-    player: newPos
-  });
+    return Object.assign({}, game, {
+        player: newPos
+    });
 }
 
 /**
@@ -239,47 +259,47 @@ function movePlayer(game, direction) {
  *
  */
 function moveAlien(game) {
-  "use strict";
-  if (game.status !== "running") {
-    return game;
-  }
+    if (game.status !== "running") {
+        return game;
+    }
 
-  let newRow = game.alien.row;
-  let newCol = game.alien.col;
+    let newRow = game.alien.row;
+    let newCol = game.alien.col;
 
-  const rowDiff = game.player.row - game.alien.row;
-  const colDiff = game.player.col - game.alien.col;
+    const rowDiff = game.player.row - game.alien.row;
+    const colDiff = game.player.col - game.alien.col;
 
-  if (Math.abs(rowDiff) >= Math.abs(colDiff)) {
-    newRow += Math.sign(rowDiff);
-  } else {
-    newCol += Math.sign(colDiff);
-  }
+    if (Math.abs(rowDiff) >= Math.abs(colDiff)) {
+        newRow += Math.sign(rowDiff);
+    } else {
+        newCol += Math.sign(colDiff);
+    }
 
-  const insideBoard =
-    newRow >= 0 &&
-    newRow < game.boardSize &&
-    newCol >= 0 &&
-    newCol < game.boardSize;
+    const insideBoard = (
+        newRow >= 0 &&
+        newRow < game.boardSize &&
+        newCol >= 0 &&
+        newCol < game.boardSize
+    );
 
-  if (!insideBoard) {
-    return game;
-  }
+    if (!insideBoard) {
+        return game;
+    }
 
-  return {
-    boardSize: game.boardSize,
-    playerStart: game.playerStart,
-    player: game.player,
-    exit: game.exit,
-    walls: game.walls,
-    cookies: game.cookies,
-    collectedCookies: game.collectedCookies,
-    playerMoves: game.playerMoves,
-    lives: game.lives,
-    steps: game.steps,
-    status: game.status,
-    alien: { row: newRow, col: newCol }
-  };
+    return {
+        boardSize: game.boardSize,
+        playerStart: game.playerStart,
+        player: game.player,
+        exit: game.exit,
+        walls: game.walls,
+        cookies: game.cookies,
+        collectedCookies: game.collectedCookies,
+        playerMoves: game.playerMoves,
+        lives: game.lives,
+        steps: game.steps,
+        status: game.status,
+        alien: {row: newRow, col: newCol}
+    };
 }
 
 /**
@@ -305,21 +325,22 @@ function moveAlien(game) {
  * noCookie.collectedCookies; // 0
  */
 function collectCookie(game) {
-  "use strict";
-  const { kept, found } = game.cookies.reduce(function (acc, cookie) {
-    return samePos(cookie, game.player)
-      ? { kept: acc.kept, found: true }
-      : { kept: acc.kept.concat([cookie]), found: acc.found };
-  }, { kept: [], found: false });
+    const {kept, found} = game.cookies.reduce(function (acc, cookie) {
+        return (
+            samePos(cookie, game.player)
+            ? {kept: acc.kept, found: true}
+            : {kept: acc.kept.concat([cookie]), found: acc.found}
+        );
+    }, {kept: [], found: false});
 
-  if (!found) {
-    return game;
-  }
+    if (!found) {
+        return game;
+    }
 
-  return Object.assign({}, game, {
-    cookies: kept,
-    collectedCookies: game.collectedCookies + 1
-  });
+    return Object.assign({}, game, {
+        cookies: kept,
+        collectedCookies: game.collectedCookies + 1
+    });
 }
 
 /**
@@ -347,37 +368,36 @@ function collectCookie(game) {
  * next.status;   // "lose"
  */
 function checkCollision(game) {
-  "use strict";
-  if (game.status !== "running") {
-    return game;
-  }
-  if (!samePos(game.player, game.alien)) {
-    return game;
-  }
+    if (game.status !== "running") {
+        return game;
+    }
+    if (!samePos(game.player, game.alien)) {
+        return game;
+    }
 
-  const newLives = game.lives - 1;
+    const newLives = game.lives - 1;
 
-  if (newLives <= 0) {
-    return Object.assign({}, game, {
-      lives: newLives,
-      status: "lose"
-    });
-  }
+    if (newLives <= 0) {
+        return Object.assign({}, game, {
+            lives: newLives,
+            status: "lose"
+        });
+    }
 
-  return {
-    boardSize: game.boardSize,
-    alien: game.alien,
-    exit: game.exit,
-    walls: game.walls,
-    cookies: game.cookies,
-    collectedCookies: game.collectedCookies,
-    playerMoves: game.playerMoves,
-    steps: game.steps,
-    status: game.status,
-    lives: newLives,
-    playerStart: game.playerStart,
-    player: Object.assign({}, game.playerStart)
-  };
+    return {
+        boardSize: game.boardSize,
+        alien: game.alien,
+        exit: game.exit,
+        walls: game.walls,
+        cookies: game.cookies,
+        collectedCookies: game.collectedCookies,
+        playerMoves: game.playerMoves,
+        steps: game.steps,
+        status: game.status,
+        lives: newLives,
+        playerStart: game.playerStart,
+        player: Object.assign({}, game.playerStart)
+    };
 }
 
 
@@ -387,7 +407,7 @@ function checkCollision(game) {
  * Returns `true` if the player has reached the exit.
  *
  * @param {Game} game - Current game state
- * @returns {boolean} `true` if the player is on the exit square, `false` otherwise
+ *  @returns {boolean} `true` if player is on exit, `false` otherwise
  *
  * @example
  * // Player has not yet reached the exit
@@ -399,8 +419,7 @@ function checkCollision(game) {
  * checkWin(atExit);       // → true
  */
 function checkWin(game) {
-  "use strict";
-  return samePos(game.player, game.exit);
+    return samePos(game.player, game.exit);
 }
 
 /**
@@ -425,13 +444,12 @@ function checkWin(game) {
  * checkLose(noLives);      // → true
  */
 function checkLose(game) {
-  "use strict";
-  return game.lives <= 0 || game.steps <= 0;
+    return game.lives <= 0 || game.steps <= 0;
 }
 
 /**
- * Advances the game by one full turn in response to the player's chosen direction.
- *
+ * Advances the game by one full turn in response to the player's chosen direct
+
  * Each turn the player moves, picks up any cookie on their new square,
  * and is checked for a collision with the alien. If the player reaches the exit
  * they win immediately. The alien then takes a step every two player moves,
@@ -458,47 +476,49 @@ function checkLose(game) {
  * atExit.status; // "win"
  */
 function nextTurn(game, direction) {
-  "use strict";
-  if (game.status !== "running") {
-    return game;
-  }
+    if (game.status !== "running") {
+        return game;
+    }
 
-  const moved = movePlayer(game, direction);
+    const moved = movePlayer(game, direction);
 
-  // 如果玩家没有移动（撞墙或出界），不消耗步数
-  if (moved.player.row === game.player.row && moved.player.col === game.player.col) {
-    return game;
-  }
+    // 如果玩家没有移动（撞墙或出界），不消耗步数
+    if (
+        moved.player.row === game.player.row &&
+        moved.player.col === game.player.col
+    ) {
+        return game;
+    }
 
-  let state = Object.assign({}, moved, {
-    playerMoves: moved.playerMoves + 1
-  });
-
-  state = collectCookie(state);
-  state = checkCollision(state);
-
-  if (checkWin(state)) {
-    return Object.assign({}, state, {
-      status: "win"
+    let state = Object.assign({}, moved, {
+        playerMoves: moved.playerMoves + 1
     });
-  }
 
-  if (state.playerMoves % 2 === 0) {
-    state = moveAlien(state);
+    state = collectCookie(state);
     state = checkCollision(state);
-  }
 
-  state = Object.assign({}, state, {
-    steps: state.steps - 1
-  });
+    if (checkWin(state)) {
+        return Object.assign({}, state, {
+            status: "win"
+        });
+    }
 
-  if (checkLose(state)) {
-    return Object.assign({}, state, {
-      status: "lose"
+    if (state.playerMoves % 2 === 0) {
+        state = moveAlien(state);
+        state = checkCollision(state);
+    }
+
+    state = Object.assign({}, state, {
+        steps: state.steps - 1
     });
-  }
 
-  return state;
+    if (checkLose(state)) {
+        return Object.assign({}, state, {
+            status: "lose"
+        });
+    }
+
+    return state;
 }
 
 /**
@@ -527,30 +547,29 @@ function nextTurn(game, direction) {
  * state.collectedCookies; // 0
  */
 function getGameState(game) {
-  "use strict";
-  return {
-    player: game.player,
-    alien: game.alien,
-    exit: game.exit,
-    lives: game.lives,
-    steps: game.steps,
-    collectedCookies: game.collectedCookies,
-    remainingCookies: game.cookies.length,
-    playerMoves: game.playerMoves,
-    status: game.status
-  };
+    return {
+        player: game.player,
+        alien: game.alien,
+        exit: game.exit,
+        lives: game.lives,
+        steps: game.steps,
+        collectedCookies: game.collectedCookies,
+        remainingCookies: game.cookies.length,
+        playerMoves: game.playerMoves,
+        status: game.status
+    };
 }
 
 export default Object.freeze({
-  createGame,
-  resetGame,
-  movePlayer,
-  nextTurn,
-  moveAlien,
-  collectCookie,
-  checkCollision,
-  checkWin,
-  checkLose,
-  getGameState,
-  isValidMove
+    createGame,
+    resetGame,
+    movePlayer,
+    nextTurn,
+    moveAlien,
+    collectCookie,
+    checkCollision,
+    checkWin,
+    checkLose,
+    getGameState,
+    isValidMove
 });
