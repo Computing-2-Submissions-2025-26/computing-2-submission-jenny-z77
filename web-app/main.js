@@ -564,7 +564,7 @@ function renderStatus() {
     saveUnlock(currentLevel + 1);
     saveLevelScore(currentLevel, game.collectedCookies);
 
-    if (currentLevel >= LEVELS.length - 1 && allLevelsPerfect()) {
+    if (allLevelsPerfect()) {
       overlayTitle.textContent = "🏆 All Levels Complete!";
       overlayTitle.className = "overlay__title overlay__title--win";
       overlaySub.innerHTML =
